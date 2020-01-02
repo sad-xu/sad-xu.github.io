@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端代码埋点实践 | Sansen Sekai</title>
+    <meta name="description" content="三千世界, 学无止境">
+    <link rel="shortcut icon" type="image/x-icon" href="./public/sad-me.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.56fe4379.css" as="style"><link rel="preload" href="/assets/js/app.3b644823.js" as="script"><link rel="preload" href="/assets/js/2.e997199f.js" as="script"><link rel="preload" href="/assets/js/38.c74c2711.js" as="script"><link rel="prefetch" href="/assets/js/10.5ee0a82c.js"><link rel="prefetch" href="/assets/js/11.daee2873.js"><link rel="prefetch" href="/assets/js/12.8248456d.js"><link rel="prefetch" href="/assets/js/13.54a5dd4a.js"><link rel="prefetch" href="/assets/js/14.b823f735.js"><link rel="prefetch" href="/assets/js/15.d3b5d7cb.js"><link rel="prefetch" href="/assets/js/16.be4ba155.js"><link rel="prefetch" href="/assets/js/17.c61f081b.js"><link rel="prefetch" href="/assets/js/18.27973658.js"><link rel="prefetch" href="/assets/js/19.12894926.js"><link rel="prefetch" href="/assets/js/20.b2251d91.js"><link rel="prefetch" href="/assets/js/21.9368ff97.js"><link rel="prefetch" href="/assets/js/22.c5dd3b56.js"><link rel="prefetch" href="/assets/js/23.823a011e.js"><link rel="prefetch" href="/assets/js/24.133dc402.js"><link rel="prefetch" href="/assets/js/25.908d76af.js"><link rel="prefetch" href="/assets/js/26.50ae55c2.js"><link rel="prefetch" href="/assets/js/27.4d3bdc40.js"><link rel="prefetch" href="/assets/js/28.1910ec53.js"><link rel="prefetch" href="/assets/js/29.ae3971d2.js"><link rel="prefetch" href="/assets/js/3.8119daf4.js"><link rel="prefetch" href="/assets/js/30.a266a056.js"><link rel="prefetch" href="/assets/js/31.6e1332a3.js"><link rel="prefetch" href="/assets/js/32.d43f6148.js"><link rel="prefetch" href="/assets/js/33.9f60066d.js"><link rel="prefetch" href="/assets/js/34.89e76bff.js"><link rel="prefetch" href="/assets/js/35.976d89b0.js"><link rel="prefetch" href="/assets/js/36.70cb64a6.js"><link rel="prefetch" href="/assets/js/37.5a73ef0e.js"><link rel="prefetch" href="/assets/js/39.8e716e3c.js"><link rel="prefetch" href="/assets/js/4.5292c871.js"><link rel="prefetch" href="/assets/js/40.64191991.js"><link rel="prefetch" href="/assets/js/41.118c8402.js"><link rel="prefetch" href="/assets/js/42.7c764675.js"><link rel="prefetch" href="/assets/js/43.6cade1e6.js"><link rel="prefetch" href="/assets/js/44.615aeebf.js"><link rel="prefetch" href="/assets/js/45.acfd3be9.js"><link rel="prefetch" href="/assets/js/46.5e409128.js"><link rel="prefetch" href="/assets/js/5.69e3b9fc.js"><link rel="prefetch" href="/assets/js/6.36a28e4b.js"><link rel="prefetch" href="/assets/js/7.708932b7.js"><link rel="prefetch" href="/assets/js/8.288108ab.js"><link rel="prefetch" href="/assets/js/9.377be857.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.56fe4379.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sansen Sekai</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/essay/" class="nav-link router-link-active">技术杂文</a></div><div class="nav-item"><a href="/base/" class="nav-link">基础知识</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">算法解析</a></div><div class="nav-item"><a href="https://github.com/sad-xu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/essay/" class="nav-link router-link-active">技术杂文</a></div><div class="nav-item"><a href="/base/" class="nav-link">基础知识</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">算法解析</a></div><div class="nav-item"><a href="https://github.com/sad-xu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/essay/" class="sidebar-link">技术杂文</a></li><li><a href="/essay/canvas的艺术.html" class="sidebar-link">canvas的艺术</a></li><li><a href="/essay/纯CSS实现酷炫文字效果.html" class="sidebar-link">纯CSS实现酷炫文字效果</a></li><li><a href="/essay/Highcharts多图联动实现及优化.html" class="sidebar-link">Highcharts多图联动实现及优化</a></li><li><a href="/essay/导出图片和excel实践.html" class="sidebar-link">导出图片和Excel实践</a></li><li><a href="/essay/Highcharts矩形树图的自定义布局方法.html" class="sidebar-link">Highcharts矩形树图的自定义布局方法</a></li><li><a href="/essay/第一届缤纷-滨江前端技术沙龙总结与感想.html" class="sidebar-link">第一届缤纷-滨江前端技术沙龙总结与感想</a></li><li><a href="/essay/前端代码埋点实践（二）.html" class="sidebar-link">前端代码埋点实践（二）</a></li><li><a href="/essay/前端代码埋点实践.html" class="active sidebar-link">前端代码埋点实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/essay/前端代码埋点实践.html#数据采集" class="sidebar-link">数据采集</a></li><li class="sidebar-sub-header"><a href="/essay/前端代码埋点实践.html#代码埋点实现" class="sidebar-link">代码埋点实现</a></li><li class="sidebar-sub-header"><a href="/essay/前端代码埋点实践.html#数据上报" class="sidebar-link">数据上报</a></li></ul></li><li><a href="/essay/Rust系列（一）.html" class="sidebar-link">Rust系列（一）：从零开始</a></li><li><a href="/essay/Rust系列（二）.html" class="sidebar-link">Rust系列（二）</a></li><li><a href="/essay/初探Rust与WASM.html" class="sidebar-link">初试WASM与Rust</a></li><li><a href="/essay/深度解析异步串行的4种实现及区别.html" class="sidebar-link">深度解析异步串行的4种实现及区别</a></li><li><a href="/essay/SVG图标在项目中的使用.html" class="sidebar-link">SVG图标在项目中的使用</a></li><li><a href="/essay/神策数据前端埋点源码解读.html" class="sidebar-link">神策数据前端埋点源码不完全解读</a></li><li><a href="/essay/vue-cli3移动端项目配置不完全指南.html" class="sidebar-link">vue-cli3移动端项目配置不完全指南</a></li><li><a href="/essay/用js让CPU跑出一个阿姆斯特朗回旋加速喷气式阿姆斯特朗炮.html" class="sidebar-link">用js让CPU跑出一个阿姆斯特朗回旋加速喷气式阿姆斯特朗炮</a></li><li><a href="/essay/Vue组件命令式和声明式的使用方式.html" class="sidebar-link">Vue组件命令式和声明式的使用方式</a></li><li><a href="/essay/优雅灵活的前端权限控制实践.html" class="sidebar-link">优雅灵活的前端权限控制实践</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端代码埋点实践"><a href="#前端代码埋点实践" class="header-anchor">#</a> 前端代码埋点实践</h1> <h2 id="数据采集"><a href="#数据采集" class="header-anchor">#</a> 数据采集</h2> <h3 id="采集什么"><a href="#采集什么" class="header-anchor">#</a> 采集什么</h3> <ol><li><p>用户行为</p> <p>PV/UV 页面跳转 停留时间 点击操作</p></li> <li><p>性能数据</p> <p>首次加载时间 白屏时间 页面渲染时间</p></li> <li><p>异常监控</p> <p>前端报错 接口报错 资源加载失败</p></li></ol> <h3 id="采集方式"><a href="#采集方式" class="header-anchor">#</a> 采集方式</h3> <ol><li><p>代码埋点</p></li> <li><p>可视化埋点</p></li> <li><p>无痕埋点</p></li></ol> <p>网上介绍太多，各有优缺点，这里主要说代码埋点</p> <h2 id="代码埋点实现"><a href="#代码埋点实现" class="header-anchor">#</a> 代码埋点实现</h2> <h3 id="pv"><a href="#pv" class="header-anchor">#</a> PV</h3> <p>路由跳转拦截</p> <p>from to start end</p> <div class="language-js extra-class"><pre class="language-js"><code>router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="用户操作"><a href="#用户操作" class="header-anchor">#</a> 用户操作</h3> <h4 id="声明式埋点"><a href="#声明式埋点" class="header-anchor">#</a> 声明式埋点</h4> <p>不侵入业务逻辑</p> <p>bind: 绑定事件</p> <p>unbind: 解绑事件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;button v-log=&quot;{...}&quot;&gt;button&lt;/button&gt;</span><span class="token template-punctuation string">`</span></span>
+
+Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 绑定点击事件</span>
+  <span class="token function-variable function">bind</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handlerClick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 收集点击数据</span>
+    <span class="token punctuation">}</span>
+    el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> handlerClick<span class="token punctuation">)</span>
+    el<span class="token punctuation">.</span><span class="token function-variable function">removeClickEvent</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> handlerClick<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 标记绑定节点，调试用</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>showHotSpot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>boxShadow <span class="token operator">=</span> <span class="token string">'inset 0 0 3px 2px #15d6ba'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 解绑</span>
+  <span class="token function-variable function">unbind</span><span class="token punctuation">:</span> <span class="token parameter">el</span> <span class="token operator">=&gt;</span> el<span class="token punctuation">.</span><span class="token function">removeClickEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="命令式埋点"><a href="#命令式埋点" class="header-anchor">#</a> 命令式埋点</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Vue.prototype.$tracker = tracker</span>
+
+<span class="token comment">// 手动增加记录</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$tracker<span class="token punctuation">.</span><span class="token function">addLog</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="highcharts"><a href="#highcharts" class="header-anchor">#</a> highcharts</h3> <p>全局设置事件 点击,选择，上钻，下钻，加载，重绘</p> <p>问题1：若图标内部设置了同样的事件，则会覆盖全局事件，导致数据遗漏</p> <p>问题2：treemap类型的图的上钻下钻事件不会被触发</p> <p>图表的操作收集最好具体图表具体处理</p> <div class="language-js extra-class"><pre class="language-js"><code>Highcharts<span class="token punctuation">.</span><span class="token function">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  chart<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    events<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">click</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="首次加载"><a href="#首次加载" class="header-anchor">#</a> 首次加载</h3> <p>收集性能数据，用户设备信息</p> <h3 id="异常监控"><a href="#异常监控" class="header-anchor">#</a> 异常监控</h3> <p>收集报错信息</p> <div class="language-js extra-class"><pre class="language-js"><code>Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span><span class="token function-variable function">errorHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> vm<span class="token punctuation">,</span> info</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// err.stack.toString info 绝大多数错误</span>
+<span class="token punctuation">}</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 资源加载失败</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'unhandledrejection'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 未处理的reject</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="数据上报"><a href="#数据上报" class="header-anchor">#</a> 数据上报</h2> <h3 id="页面关闭时发送"><a href="#页面关闭时发送" class="header-anchor">#</a> 页面关闭时发送</h3> <p>如果在app中手动清空缓存，那webview里的localStorage也会清空</p> <p>所以数据不能存到缓存里，在用户完全退出页面前，必须把剩余的数据全发出去</p> <ul><li>最佳方法 - sendBeacon</li></ul> <p>支持 iOS &gt;= 11.3  Android &gt;= 5</p> <p>sendBeacon请求为<code>POST</code>，无法修改请求头，无回调</p> <div class="language-js extra-class"><pre class="language-js"><code>window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;unload&quot;</span><span class="token punctuation">,</span> uploadLog<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">uploadLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  navigator<span class="token punctuation">.</span><span class="token function">sendBeacon</span><span class="token punctuation">(</span><span class="token string">&quot;/r.png&quot;</span><span class="token punctuation">,</span> logData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>低版本不支持</p> <ul><li>传统方法</li></ul> <p>监听<code>unload</code>或<code>beforeunload</code>事件，并通过一个同步的请求或者构造一个特定 src 的 img 标签来延迟上报</p> <div class="language-js extra-class"><pre class="language-js"><code>window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;unload&quot;</span><span class="token punctuation">,</span> uploadLog<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">uploadLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/r.png&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>logData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>页面关闭延迟，体验差</p> <ul><li>polyfill</li></ul> <p>二合一</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">polyfillSendBeacon</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'sendBeacon'</span> <span class="token keyword">in</span> window<span class="token punctuation">.</span>navigator<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>sendBeacon <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="如何发送"><a href="#如何发送" class="header-anchor">#</a> 如何发送</h3> <p>用一个缓冲列表存储log，当满足条件时发送列表里的log</p> <p>发送时机</p> <ol><li>路由跳转时，判断当前缓冲列表里的log是否达到限制，若达到则发送</li> <li>页面关闭前，发送所有log</li></ol> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>以上主要分析了手动埋点工具的实现，侧重用户行为的收集</p> <p>在性能收集和报错处理上</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 使用</span>
+
+<span class="token comment">// // 初始化</span>
+<span class="token comment">// const tracker = new tracker()</span>
+<span class="token comment">// tracker.init({</span>
+<span class="token comment">//   Vue</span>
+<span class="token comment">// })</span>
+<span class="token comment">// Vue.prototype.$tracker = tracker</span>
+
+<span class="token comment">// // 路由</span>
+<span class="token comment">// router.beforeEach((to, from, next) =&gt; {</span>
+<span class="token comment">//   tracker.enterNewPage(from, to)</span>
+<span class="token comment">//   next()</span>
+<span class="token comment">// })</span>
+
+<span class="token comment">// // 错误收集</span>
+<span class="token comment">// Vue.config.errorHandler = (err, vm, info) =&gt; {}</span>
+<span class="token comment">// window.addEventListener('error', e =&gt; {})</span>
+<span class="token comment">// window.addEventListener('unhandledrejection', e =&gt; {})</span>
+
+<span class="token comment">// // 声明式</span>
+<span class="token comment">// v-log</span>
+
+<span class="token comment">// // 命令式</span>
+<span class="token comment">// this.$tracker.addLog({key, val})</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Tracker</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    pageNumLimit <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>    <span class="token comment">// 最大页面数</span>
+    actionNumLimit <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">,</span>  <span class="token comment">// 最大动作数</span>
+    showHotSpots <span class="token operator">=</span> <span class="token boolean">false</span>  <span class="token comment">// 显示已绑定节点</span>
+  <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">'0.1'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>showHotSpots <span class="token operator">=</span> showHotSpots
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pageNumLimit <span class="token operator">=</span> pageNumLimit
+    <span class="token keyword">this</span><span class="token punctuation">.</span>actionNumLimit <span class="token operator">=</span> actionNumLimit
+    <span class="token keyword">this</span><span class="token punctuation">.</span>log <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>logList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> Vue <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> that <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token function">polyfillSendBeacon</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'beforeunload'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// </span>
+    Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">bind</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> <span class="token function-variable function">handlerClick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          that<span class="token punctuation">.</span>log<span class="token punctuation">.</span>actions<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> handlerClick<span class="token punctuation">)</span>
+        el<span class="token punctuation">.</span><span class="token function-variable function">removeClickEvent</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> handlerClick<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>that<span class="token punctuation">.</span>showHopSpots<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>boxShadow <span class="token operator">=</span> <span class="token string">'inset 0 0 3px 2px #15d6ba'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">unbind</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span><span class="token function">removeClickEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 手动增加记录</span>
+  <span class="token function">addLog</span><span class="token punctuation">(</span><span class="token parameter">actionLog</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>log<span class="token punctuation">.</span>actions<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 切换路由</span>
+  <span class="token function">enterNewPage</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">from</span><span class="token punctuation">,</span> to</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>log<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>log<span class="token punctuation">.</span>end <span class="token operator">=</span> now
+      <span class="token keyword">this</span><span class="token punctuation">.</span>logList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>log<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>logList<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pageNumLimit <span class="token operator">||</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>logList<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> acc <span class="token operator">+</span> item<span class="token punctuation">.</span>actions<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>actionNumLimit
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> logList <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>logList
+      <span class="token keyword">this</span><span class="token punctuation">.</span>logList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">sendLog</span><span class="token punctuation">(</span>logList<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 发送日志</span>
+  <span class="token function">sendLog</span><span class="token punctuation">(</span><span class="token parameter">logList</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">polyfillSendBeacon</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">修改于:</span> <span class="time">10/19/2019, 9:25:37 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/essay/前端代码埋点实践（二）.html" class="prev">前端代码埋点实践（二）</a></span> <span class="next"><a href="/essay/Rust系列（一）.html">Rust系列（一）：从零开始</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3b644823.js" defer></script><script src="/assets/js/2.e997199f.js" defer></script><script src="/assets/js/38.c74c2711.js" defer></script>
+  </body>
+</html>
